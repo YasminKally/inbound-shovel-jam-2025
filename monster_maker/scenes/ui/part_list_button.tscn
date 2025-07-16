@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3skaxqx2w0ws"]
+
+[ext_resource type="Script" uid="uid://mcrhgl00l54p" path="res://scripts/ui/part_list_button.gd" id="1_7w3kw"]
+[ext_resource type="PackedScene" uid="uid://dx4s5gokdfb58" path="res://scenes/ui/part_button.tscn" id="2_7uwye"]
+
+[node name="PartListButton" type="Node"]
+script = ExtResource("1_7w3kw")
+
+[node name="button" type="Button" parent="."]
+custom_minimum_size = Vector2(60, 60)
+offset_right = 60.0
+offset_bottom = 60.0
+expand_icon = true
+
+[node name="parts" type="VBoxContainer" parent="."]
+visible = false
+custom_minimum_size = Vector2(60, 60)
+offset_left = 70.0
+offset_right = 130.0
+offset_bottom = 316.0
+
+[node name="GreatGoblin" parent="parts" instance=ExtResource("2_7uwye")]
+position = Vector2(30, 30)
+monster_set = 1
+
+[node name="Sprite2D" parent="parts/GreatGoblin" index="1"]
+scale = Vector2(3, 3)
+
+[node name="Cyberlizard" parent="parts" instance=ExtResource("2_7uwye")]
+position = Vector2(30, 92)
+monster_set = 2
+
+[node name="Sprite2D" parent="parts/Cyberlizard" index="1"]
+scale = Vector2(3, 3)
+
+[node name="RoyalDragon" parent="parts" instance=ExtResource("2_7uwye")]
+position = Vector2(30, 154)
+monster_set = 3
+
+[node name="Sprite2D" parent="parts/RoyalDragon" index="1"]
+scale = Vector2(3, 3)
+
+[node name="LightMoth" parent="parts" instance=ExtResource("2_7uwye")]
+position = Vector2(30, 216)
+monster_set = 5
+
+[node name="Sprite2D" parent="parts/LightMoth" index="1"]
+scale = Vector2(3, 3)
+
+[node name="ApexNyx" parent="parts" instance=ExtResource("2_7uwye")]
+position = Vector2(30, 278)
+monster_set = 4
+
+[node name="Sprite2D" parent="parts/ApexNyx" index="1"]
+scale = Vector2(3, 3)
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]
+
+[editable path="parts/GreatGoblin"]
+[editable path="parts/Cyberlizard"]
+[editable path="parts/RoyalDragon"]
+[editable path="parts/LightMoth"]
+[editable path="parts/ApexNyx"]

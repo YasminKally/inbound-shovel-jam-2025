@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx4s5gokdfb58"]
+
+[ext_resource type="Script" uid="uid://brbgi3wuvqabd" path="res://scripts/ui/part_button.gd" id="1_78ah8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_83wtp"]
+size = Vector2(60, 60)
+
+[node name="PartButton" type="Node2D"]
+script = ExtResource("1_78ah8")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_83wtp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
